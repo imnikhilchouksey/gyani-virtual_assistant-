@@ -335,12 +335,8 @@ body button {
   }
 
   .mic img {
-    height: 130px;
-    width: 120px;
-  }
-
-  .hand-img{
-    positoin 
+    height:168px;
+    width: 168px;
   }
 
   .example-type {
@@ -374,3 +370,7 @@ body button {
     gap: 2vh;
   }
 }
+
+
+
+
