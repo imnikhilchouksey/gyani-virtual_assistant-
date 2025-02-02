@@ -90,8 +90,8 @@ body {
   /* margin-bottom: 0; */
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-style: normal;
-  background-image: linear-gradient(to right , blue , red);
-  color: transparent;
+/*   background-image: linear-gradient(to right , blue , red);
+  color: transparent; */
   /* -webkit-background-clip: text; */
   width: 90%;
 }
@@ -100,18 +100,18 @@ body {
   font-family: monospace;
   font-weight: 600;
   font-size: 18px;
-  background-image: linear-gradient(to right , yellow , blue , red);
-  color: transparent;
+/*   background-image: linear-gradient(to right , yellow , blue , red);
+  color: transparent; */
   /* -webkit-background-clip: text; */
   display: none;
 }
 
-.heading h1:hover{
+/* .heading h1:hover{
   background-image: linear-gradient(to right , red, blue);
   color: transparent;
-  /* -webkit-background-clip: text; */
+  -webkit-background-clip: text;
   transition: all ease 0.2s;
-}
+} */
 
 body button {
   cursor: pointer;
