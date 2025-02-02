@@ -84,34 +84,24 @@ body {
 }
 
 .heading h1 {
-  text-transform: uppercase;
-  font-weight: bolder;
+  /* text-transform: uppercase; */
+  font-weight: bold;
   font-size: 5rem;
-  /* margin-bottom: 0; */
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-style: normal;
-/*   background-image: linear-gradient(to right , blue , red);
-  color: transparent; */
-  /* -webkit-background-clip: text; */
   width: 90%;
+}
+.heading span{
+  font-size: 4rem;
+  font-weight: bolder;
 }
 
 .heading p {
   font-family: monospace;
   font-weight: 600;
   font-size: 18px;
-/*   background-image: linear-gradient(to right , yellow , blue , red);
-  color: transparent; */
-  /* -webkit-background-clip: text; */
   display: none;
 }
-
-/* .heading h1:hover{
-  background-image: linear-gradient(to right , red, blue);
-  color: transparent;
-  -webkit-background-clip: text;
-  transition: all ease 0.2s;
-} */
 
 body button {
   cursor: pointer;
@@ -316,44 +306,71 @@ body button {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-
-@media only screen and (max-width:600px){
-  .about{
+@media only screen and (max-width: 600px) {
+  .about {
     display: none;
   }
 
-  .example{
+  .example {
     flex-wrap: wrap;
   }
 
-  .navbar{
+  .navbar {
     display: flex;
     justify-content: center;
-    width: 50%;
-    /* position:sticky;
-    height: auto; */
+    width: 100%;
   }
 
-  .intro-part{
+  .intro-part {
     width: 90%;
   }
 
-  .intro-part p{
+  .intro-part p {
     display: none;
-  } 
+  }
 
-  .logo img{
+  .logo img {
     padding: 0;
     margin: 0;
   }
 
-  .mic img{
+  .mic img {
     height: auto;
     width: auto;
   }
-  .example-type{
-    height: 20px;
+
+  .hand-img{
+    positoin 
   }
 
+  .example-type {
+    height: auto;
+  }
 
+  /* Hide search bar on mobile */
+  .search-panel {
+    display: none;
+  }
+
+  /* Adjust heading for smaller screens */
+  .heading h1 {
+    font-size: 3rem;
+  }
+
+  .heading span {
+    font-size: 2.5rem;
+  }
+
+  /* Optimize buttons for mobile */
+  .navbar button {
+    font-size: 0.9rem;
+    padding: 6px;
+  }
+
+  /* Footer adjustments */
+  .footer {
+    flex-direction: column;
+    align-items: center;
+    gap: 2vh;
+  }
 }
