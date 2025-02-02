@@ -162,7 +162,7 @@ body button {
   position: absolute;
   top: 4.5%;
   left: 40%;
-  transform: translate(-50%, -50%);
+  /* transform: translate(-50%, -50%); */
   height: 170px;
   width: 170px;
   background-color: transparent;
@@ -336,7 +336,11 @@ body button {
 
   .mic img {
     height:140px;
-    width: 140px;
+    width: 130px;
+  }
+  .mic img {
+    height:140px;
+    width: 130px;
   }
 
   .example-type {
