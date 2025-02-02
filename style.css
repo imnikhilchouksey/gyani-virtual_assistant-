@@ -150,7 +150,7 @@ body button {
   transition: all 0.2s ease;
 }
 
-/* .mic img:hover {
+.mic img:hover {
   border-radius: 50%;
   height: 168px;
   width: 168px;
@@ -162,13 +162,13 @@ body button {
   position: absolute;
   top: 4.5%;
   left: 40%;
-  /* transform: translate(-50%, -50%); */
+  transform: translate(-50%, -50%);
   height: 170px;
   width: 170px;
   background-color: transparent;
   transition: all 0.2s ease;
   cursor: pointer;
-} */
+}
 
 .search-panel{
   width: 70%;
