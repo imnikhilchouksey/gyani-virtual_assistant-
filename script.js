@@ -30,7 +30,7 @@ try {
     recognition.onaudioend = () => {
       console.log("Speech recognition stopped.");
       isListening = false;
-      img.src = " mic.svg"; 
+      img.src = "mic.svg"; 
     };
 
     const btn = document.querySelector(".mic");
@@ -40,11 +40,11 @@ try {
       if (isListening) {
         recognition.stop();
         isListening = false;
-        img.src = " mic.svg"; 
+        img.src = "mic.svg"; 
       } else {
         recognition.start();
         isListening = true;
-        img.src = " loading-animation.gif"; 
+        img.src = "loading-animation.gif"; 
       }
     });
 
@@ -106,9 +106,9 @@ function wishMe() {
   }
 }
 
-window.addEventListener("load" ,()=>{
-  wishMe();
-})
+// window.addEventListener("load" ,()=>{
+//   wishMe();
+// })
 
 
 const search = document.querySelector(".search-input");
@@ -120,5 +120,6 @@ search.addEventListener("keydown",function(event){
     taskCommand(searchText)
   }
 })
+
 
 
