@@ -3,7 +3,7 @@ function speak(text) {
   speakText.rate = 1;
   speakText.pitch = 1;
   speakText.volume = 1;
-  speakText.lang = "hi-GB";
+  speakText.lang = "hi-IN"; 
   window.speechSynthesis.speak(speakText);
 }
 
@@ -14,12 +14,11 @@ try {
     alert("Speech recognition is not supported in your browser.");
   } else {
     let recognition = new SpeechRecognition();
-    recognition.lang = "en-US"; 
-    let isListening = false; 
+    recognition.lang = "en-US";
+    let isListening = false;
 
     recognition.onresult = (event) => {
-      let currentIndex = event.resultIndex;
-      let transcript = event.results[currentIndex][0].transcript.toLowerCase();
+      let transcript = event.results[event.resultIndex][0].transcript.toLowerCase();
       taskCommand(transcript);
     };
 
@@ -30,55 +29,57 @@ try {
     recognition.onaudioend = () => {
       console.log("Speech recognition stopped.");
       isListening = false;
-      img.src = "mic.svg"; 
+      if (img) img.src = "mic.svg";
     };
 
     const btn = document.querySelector(".mic");
     const img = document.querySelector(".mic-img");
 
-    btn.addEventListener("click", () => {
-      if (isListening) {
-        recognition.stop();
-        isListening = false;
-        img.src = "mic.svg"; 
-      } else {
-        recognition.start();
-        isListening = true;
-        img.src = "loading-animation.gif"; 
-      }
-    });
-
-    function taskCommand(command) {
-      if (command.includes("hey") || command.includes("hello")) {
-        speak("Hello, what can I help you with?");
-      } else if (command.includes("open youtube")) {
-        speak("Opening YouTube");
-        window.open("https://youtube.com/", "_blank");
-      } else if (command.includes("open whatsapp")) {
-        speak("Opening WhatsApp...");
-        window.open("https://web.whatsapp.com", "_blank");
-      } else if (command.includes("open calculator")) {
-        speak("Opening an online calculator...");
-        window.open("https://www.calculatorsoup.com/", "_blank");
-      } else if (command.includes("open instagram")) {
-        speak("Opening Instagram");
-        window.open("https://instagram.com/", "_blank");
-      } else if (command.includes("who are you") || command.includes("introduce yourself")) {
-        speak("Hello, I am a virtual assistant made by Nikhil");
-      } else if (command.includes("time")) {
-        let time = new Date().toLocaleString(undefined, { hour: "numeric", minute: "numeric" });
-        speak("The time is " + time);
-      } else if (command.includes("date")) {
-        let date = new Date().toLocaleString(undefined, { day: "numeric", month: "short" });
-        speak("The date is " + date);
-      } else {
-        speak(`Here is what I found on the internet regarding ${command}`);
-        window.open(`https://www.google.com/search?q=${command}`, "_blank");
-      }
+    if (btn && img) {
+      btn.addEventListener("click", () => {
+        if (isListening) {
+          recognition.stop();
+          isListening = false;
+          img.src = "mic.svg";
+        } else {
+          recognition.start();
+          isListening = true;
+          img.src = "loading-animation.gif";
+        }
+      });
     }
   }
 } catch (err) {
   console.error("Speech recognition not supported:", err);
+}
+
+function taskCommand(command) {
+  if (command.includes("hey") || command.includes("hello")) {
+    speak("Hello, what can I help you with?");
+  } else if (command.includes("open youtube")) {
+    speak("Opening YouTube");
+    window.open("https://youtube.com/", "_blank");
+  } else if (command.includes("open whatsapp")) {
+    speak("Opening WhatsApp...");
+    window.open("https://web.whatsapp.com", "_blank");
+  } else if (command.includes("open calculator")) {
+    speak("Opening an online calculator...");
+    window.open("https://www.calculatorsoup.com/", "_blank");
+  } else if (command.includes("open instagram")) {
+    speak("Opening Instagram");
+    window.open("https://instagram.com/", "_blank");
+  } else if (command.includes("who are you") || command.includes("introduce yourself")) {
+    speak("Hello, I am a virtual assistant made by Nikhil");
+  } else if (command.includes("time")) {
+    let time = new Date().toLocaleString(undefined, { hour: "numeric", minute: "numeric" });
+    speak("The time is " + time);
+  } else if (command.includes("date")) {
+    let date = new Date().toLocaleString(undefined, { day: "numeric", month: "short" });
+    speak("The date is " + date);
+  } else {
+    speak(`Here is what I found on the internet regarding ${command}`);
+    window.open(`https://www.google.com/search?q=${command}`, "_blank");
+  }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -94,9 +95,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function wishMe() {
-  let day = new Date();
-  let hour = day.getHours();
-
+  let hour = new Date().getHours();
   if (hour >= 5 && hour < 12) {
     speak("Good Morning sir, what can I do for you?");
   } else if (hour >= 12 && hour < 17) {
@@ -106,20 +105,15 @@ function wishMe() {
   }
 }
 
-// window.addEventListener("load" ,()=>{
-//   wishMe();
-// })
-
+// window.addEventListener("load", wishMe);
 
 const search = document.querySelector(".search-input");
-
-search.addEventListener("keydown",function(event){
-  if(event.key === "Enter"){
-    console.log("search working ")
-    const searchText = search.value ;
-    taskCommand(searchText)
-  }
-})
-
-
-
+if (search) {
+  search.addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+      console.log("Search working");
+      const searchText = search.value;
+      taskCommand(searchText);
+    }
+  });
+}
