@@ -231,6 +231,9 @@ body button {
   font-size: 1.1rem;
   font-weight: 550;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .example-type:hover {
@@ -247,8 +250,10 @@ body button {
   transition: all 0.3s ease;
   background-color: #ffffff20;
   transform: scaleX(1.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
 .footer {
   display: flex;
   justify-content: space-between;
