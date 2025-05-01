@@ -29,7 +29,7 @@ try {
     recognition.onaudioend = () => {
       console.log("Speech recognition stopped.");
       isListening = false;
-      if (img) img.src = "mic.svg";
+      if (img) img.src = "assets/mic.svg";
     };
 
     const btn = document.querySelector(".mic");
@@ -40,11 +40,11 @@ try {
         if (isListening) {
           recognition.stop();
           isListening = false;
-          img.src = "mic.svg";
+          img.src = "assets/mic.svg";
         } else {
           recognition.start();
           isListening = true;
-          img.src = "loading-animation.gif";
+          img.src = "assets/loading-animation.gif";
         }
       });
     }
