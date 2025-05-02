@@ -62,6 +62,7 @@ function taskCommand(command) {
   } else if (command.includes("open whatsapp")) {
     speak("Opening WhatsApp...");
     window.open("https://web.whatsapp.com", "_blank");
+    window.location.href = "whatsapp://send?text=Hello";
   } else if (command.includes("open calculator")) {
     speak("Opening an online calculator...");
     window.open("https://www.calculatorsoup.com/", "_blank");
