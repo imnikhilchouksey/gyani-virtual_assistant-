@@ -53,6 +53,7 @@ try {
   console.error("Speech recognition not supported:", err);
 }
 
+
 function taskCommand(command) {
   if (command.includes("hey") || command.includes("hello")) {
     speak("Hello, what can I help you with?");
@@ -61,9 +62,20 @@ function taskCommand(command) {
     window.open("https://youtube.com/", "_blank");
   } else if (command.includes("open whatsapp")) {
     speak("Opening WhatsApp...");
-    // window.open("https://web.whatsapp.com", "_blank");
-    window.location.href = "whatsapp://";
-  } else if (command.includes("open calculator")) {
+    
+    const link = document.createElement("a");
+    link.href = "whatsapp://";
+    link.style.display = "none";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  
+    setTimeout(() => {
+      
+      window.location.href = "https://wa.me/";
+    }, 1000);
+  }
+   else if (command.includes("open calculator")) {
     speak("Opening an online calculator...");
     window.open("https://www.calculatorsoup.com/", "_blank");
   } else if (command.includes("open instagram")) {
