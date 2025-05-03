@@ -90,7 +90,28 @@ body {
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-style: normal;
   width: 90%;
+  background: linear-gradient(270deg, #ff0000, #00ff00, #0000ff, #ff0000);
+  background-size: 800% 800%;
+  animation: gradientMove 20s ease infinite;
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
 }
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 .heading span{
   font-size: 4rem;
   font-weight: bolder;
@@ -148,7 +169,27 @@ body button {
   width: 170px;
   background-color: #001;
   transition: all 0.2s ease;
+  animation: heartbeat 3s infinite;
 }
+
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  14% {
+    transform: scale(1.1);  /* Slightly smaller pulse */
+  }
+  28% {
+    transform: scale(1);
+  }
+  42% {
+    transform: scale(1.05); /* Even more subtle */
+  }
+  70% {
+    transform: scale(1);
+  }
+}
+
 
 /* .mic img:hover {
   border-radius: 50%;
@@ -340,11 +381,7 @@ body button {
   }
 
   .mic img {
-    height:100px;
-    width: 10px;
-  }
-  .mic img {
-    height:140px;
+    height:130px;
     width: 130px;
   }
 
