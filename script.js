@@ -1,4 +1,11 @@
-function speak(text) {
+function speak(text) { 
+  if (window.recognition && window.isListening) {
+    window.recognition.stop();
+    window.isListening = false;
+    const img = document.querySelector(".mic-img");
+    if (img) img.src = "assets/mic.svg";
+  }
+
   let speakText = new SpeechSynthesisUtterance(text);
   speakText.rate = 1;
   speakText.pitch = 1;
@@ -15,7 +22,8 @@ try {
   } else {
     let recognition = new SpeechRecognition();
     recognition.lang = "en-US";
-    let isListening = false;
+    window.recognition = recognition;
+    window.isListening = false;
 
     recognition.onresult = (event) => {
       let transcript = event.results[event.resultIndex][0].transcript.toLowerCase();
@@ -28,7 +36,7 @@ try {
 
     recognition.onaudioend = () => {
       console.log("Speech recognition stopped.");
-      isListening = false;
+      window.isListening = false;
       if (img) img.src = "assets/mic.svg";
     };
 
@@ -37,13 +45,13 @@ try {
 
     if (btn && img) {
       btn.addEventListener("click", () => {
-        if (isListening) {
+        if (window.isListening) {
           recognition.stop();
-          isListening = false;
+          window.isListening = false;
           img.src = "assets/mic.svg";
         } else {
           recognition.start();
-          isListening = true;
+          window.isListening = true;
           img.src = "assets/loading-animation.gif";
         }
       });
@@ -52,7 +60,6 @@ try {
 } catch (err) {
   console.error("Speech recognition not supported:", err);
 }
-
 
 function taskCommand(command) {
   if (command.includes("hey") || command.includes("hello")) {
@@ -71,7 +78,6 @@ function taskCommand(command) {
     document.body.removeChild(link);
   
     setTimeout(() => {
-      
       window.location.href = "https://wa.me/";
     }, 1000);
   }
@@ -117,8 +123,6 @@ function wishMe() {
     speak("Good Evening sir, what can I do for you?");
   }
 }
-
-// window.addEventListener("load", wishMe);
 
 const search = document.querySelector(".search-input");
 if (search) {
