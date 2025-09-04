@@ -90,7 +90,7 @@ function taskCommand(command) {
     speak("The date is " + date);
   } else {
     
-    fetch("https://gyani-ai-virtual-assistant.onrender.com", {
+    fetch("https://gyani-ai-virtual-assistant.onrender.com/chat", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ prompt: command }) 
