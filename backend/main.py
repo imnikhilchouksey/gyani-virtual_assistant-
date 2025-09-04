@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-app = Flask(__name__, static_folder='../frontend', static_url_path='')
+app = Flask(__name__)
 CORS(app)
 
 gemini_api_key = os.getenv("gemini_api_key")
@@ -14,9 +14,9 @@ genai.configure(api_key=gemini_api_key)
 gemini_model = genai.GenerativeModel("gemini-1.5-flash")
 
 @app.route('/')
-def serve_index():
-    return send_from_directory(app.static_folder, 'index.html')
-
+def home():
+    return jsonify({"message":"Backend is running"})
+    
 @app.route('/<path:path>')
 def serve_static_files(path):
     return send_from_directory(app.static_folder, path)
