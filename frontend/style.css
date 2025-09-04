@@ -1,12 +1,8 @@
-
-
 body {
   width: 100%;
-  background-image: linear-gradient(to right , #000 ,#001 , #001 , #000);
+  background-image: linear-gradient(to right, #000, #001, #001, #000);
   background-size: cover;
   margin: 0;
-  padding:14px;
-  padding-top: 2px;
   padding-bottom: 2px;
   color: #fff;
   display: flex;
@@ -23,7 +19,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-image: linear-gradient(to right , #000 ,#001 , #001 , #000);
+  background-image: linear-gradient(to right, #000, #001, #001, #000);
   flex-wrap: wrap;
   margin-top: 0.7rem;
 }
@@ -51,13 +47,13 @@ body {
   border-radius: 12px;
 }
 
-.about{
+.about {
   padding: 5px;
   display: flex;
   gap: 1.5vh;
 }
 
-.logo{
+.logo {
   text-align: center;
   height: 30px;
   padding-bottom: 10px;
@@ -89,7 +85,7 @@ body {
   /* text-transform: uppercase; */
   font-weight: bold;
   font-size: 5rem;
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-style: normal;
   width: 90%;
   background: linear-gradient(270deg, #ff0000, #00ff00, #0000ff, #ff0000);
@@ -106,24 +102,26 @@ body {
   0% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
+
   100% {
     background-position: 0% 50%;
   }
 }
 
-.heading span{
+.heading span {
   font-size: 4rem;
   font-weight: bolder;
 }
 
 .heading p {
   font-family: monospace;
-  font-weight: 600;
+  font-weight: lighter;
   font-size: 18px;
-  display: none;
+  display: block;
 }
 
 body button {
@@ -175,18 +173,26 @@ body button {
 }
 
 @keyframes heartbeat {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: scale(1);
   }
+
   14% {
-    transform: scale(1.1);  /* Slightly smaller pulse */
+    transform: scale(1.1);
+    /* Slightly smaller pulse */
   }
+
   28% {
     transform: scale(1);
   }
+
   42% {
-    transform: scale(1.05); /* Even more subtle */
+    transform: scale(1.05);
+    /* Even more subtle */
   }
+
   70% {
     transform: scale(1);
   }
@@ -213,7 +219,7 @@ body button {
   cursor: pointer;
 } */
 
-.search-panel{
+.search-panel {
   width: 70%;
   display: flex;
   align-items: center;
@@ -225,12 +231,12 @@ body button {
   padding: 5px;
 }
 
-.search-panel input{
+.search-panel input {
   width: 50%;
   padding: 10px 5px;
   border: transparent;
   color: #fff;
-  border-radius: 25px ;
+  border-radius: 25px;
   text-align: center;
   font-size: 1.2rem;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -240,8 +246,8 @@ body button {
   font-weight: 500;
 }
 
-.search-panel input:hover{
-  background-color:#ffffff20;
+.search-panel input:hover {
+  background-color: #ffffff20;
   transform: scaleX(1.02);
 }
 
@@ -284,7 +290,7 @@ body button {
   padding: 10px;
   margin: 10px;
   border-radius: 12px;
-  font-size: 1.2rem ;
+  font-size: 1.2rem;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   width: max-width;
   box-shadow: 2px 2px 5px rgba(105, 104, 104, 0.068);
@@ -297,6 +303,7 @@ body button {
   justify-content: center;
   align-items: center;
 }
+
 .footer {
   display: flex;
   flex-direction: row;
@@ -309,37 +316,39 @@ body button {
   gap: 2vh;
 }
 
-.links img{
+.links img {
   width: 20px;
   margin: 10px;
 }
 
 .footer p {
   font-size: 0.8rem;
-  font-family:monospace;
+  font-family: monospace;
 }
 
-#about-section{
+#about-section {
   height: auto;
   width: 90%;
   display: flex;
-  flex-direction:column;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
   background-color: #ffffff15;
   padding: 10px 15px;
   border-radius: 15px;
   flex-wrap: wrap;
 }
 
-#about-section:hover{
+#about-section:hover {
   background-color: #ffffff20;
 }
 
-#about-section h2{
+#about-section h2 {
   font-weight: bolder;
-  text-decoration:underline;
+  text-decoration: underline;
   color: #fff;
   font-weight: bolder;
   margin-bottom: 5px;
@@ -382,7 +391,7 @@ body button {
   }
 
   .mic img {
-    height:130px;
+    height: 130px;
     width: 130px;
   }
 
@@ -395,16 +404,27 @@ body button {
     display: none;
   }
 
-  
+
   .heading h1 {
-    font-size: 3rem;
+    font-size: 2rem;
+    width: 100%;
+    margin-bottom: 0;
   }
 
   .heading span {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 
-  
+  .heading p {
+    font-family: monospace;
+    font-weight: lighter;
+    font-size: 12px;
+    display: block;
+    /* padding-left: 10px;
+    padding-right: 10px; */
+  }
+
+
   .navbar button {
     font-size: 0.9rem;
     padding: 6px;
@@ -417,7 +437,3 @@ body button {
     gap: 0;
   }
 }
-
-
-
-
