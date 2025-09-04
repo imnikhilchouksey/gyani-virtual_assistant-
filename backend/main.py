@@ -17,10 +17,6 @@ gemini_model = genai.GenerativeModel("gemini-1.5-flash")
 def home():
     return jsonify({"message":"Backend is running"})
     
-@app.route('/<path:path>')
-def serve_static_files(path):
-    return send_from_directory(app.static_folder, path)
-
 @app.route('/chat', methods=['POST'])
 def chat():
     data = request.json
